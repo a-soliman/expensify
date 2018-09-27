@@ -12,9 +12,6 @@ const Header = () => (
                 <NavLink to = "/create" activeClassName = "is-active">Add</NavLink>
             </li>
             <li>
-                <NavLink to = "/edit" activeClassName = "is-active">Edit</NavLink>
-            </li>
-            <li>
                 <NavLink to = "/help" activeClassName = "is-active">Help</NavLink>
             </li>  
         </ul>
