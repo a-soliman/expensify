@@ -20,13 +20,8 @@ store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(addExpense({description: 'Water bill', amount: 125, createdAt: 200}));
-const expenseTwo = store.dispatch(addExpense({description: 'Gas bill', amount: 100, createdAt: 201}));
-
-store.dispatch(setTextFilter('gas'));
-
-setTimeout(() => {
-    store.dispatch(setTextFilter('bill'));
-}, 3000);
+const expenseTwo = store.dispatch(addExpense({description: 'Gas bill', amount: 100, createdAt: 1000}));
+const expenseThree = store.dispatch(addExpense({description: 'Rent', amount: 1000, createdAt: 201}));
 
 const jsx = (
     <Provider store={store} >
