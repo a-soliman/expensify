@@ -10,6 +10,8 @@ import getVisibleExpenses from './selectors/expenses';
 
 import 'normalize-scss/sass/_normalize.scss';
 import './styles/styles.scss';
+import { isMoment } from 'moment';
+import moment from 'moment';
 
 const store = configureStore();
 
@@ -19,9 +21,9 @@ store.subscribe(() => {
     console.log(visibleExpenses);
 });
 
-const expenseOne = store.dispatch(addExpense({description: 'Water bill', amount: 125, createdAt: 200}));
-const expenseTwo = store.dispatch(addExpense({description: 'Gas bill', amount: 100, createdAt: 1000}));
-const expenseThree = store.dispatch(addExpense({description: 'Rent', amount: 1000, createdAt: 201}));
+const expenseOne = store.dispatch(addExpense({description: 'Water bill', amount: 125, createdAt: moment()}));
+const expenseTwo = store.dispatch(addExpense({description: 'Gas bill', amount: 100, createdAt: moment()}));
+const expenseThree = store.dispatch(addExpense({description: 'Rent', amount: 1000, createdAt: moment()}));
 
 const jsx = (
     <Provider store={store} >
