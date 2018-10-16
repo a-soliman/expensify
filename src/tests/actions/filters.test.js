@@ -37,3 +37,19 @@ describe('SortByAmount', () => {
     });
 });
 
+describe('SetStartDate', () => {
+    test('Should return the corrct type and the passed in date', () => {
+        const date = 'now';
+        const action = setStartDate(date);
+        expect(action).toEqual({
+            type: 'SET_START_DATE',
+            date
+        });
+    });
+
+    test('Should return undefined date if no date passed', () => {
+        const action = setStartDate();
+        expect(action).toHaveProperty('date', undefined);
+    })
+});
+
