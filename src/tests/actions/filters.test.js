@@ -53,3 +53,18 @@ describe('SetStartDate', () => {
     })
 });
 
+describe('SetEndDate', () => {
+    test('Should return the corrct type and the passed in date', () => {
+        const date = 'now';
+        const action = setEndDate(date);
+        expect(action).toEqual({
+            type: 'SET_END_DATE',
+            date
+        });
+    });
+
+    test('Should return undefined date if no date passed', () => {
+        const action = setEndDate();
+        expect(action).toHaveProperty('date', undefined);
+    })
+});
