@@ -19,3 +19,12 @@ describe('SetTextFilter' , () => {
     });
 });
 
+describe('SortByDate', () => {
+    test('Should return the correct type', () => {
+        const action = sortByDate();
+        expect(action).toEqual({
+            type: 'SORT_BY_DATE'
+        });
+    });
+});
+
