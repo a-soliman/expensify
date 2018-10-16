@@ -1,4 +1,6 @@
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../../actions/filters';
+import moment from 'moment';
+
 
 describe('SetTextFilter' , () => {
     test('Should return default text value if no value provided', () => {
@@ -39,7 +41,7 @@ describe('SortByAmount', () => {
 
 describe('SetStartDate', () => {
     test('Should return the corrct type and the passed in date', () => {
-        const date = 'now';
+        const date = moment();
         const action = setStartDate(date);
         expect(action).toEqual({
             type: 'SET_START_DATE',
@@ -55,7 +57,7 @@ describe('SetStartDate', () => {
 
 describe('SetEndDate', () => {
     test('Should return the corrct type and the passed in date', () => {
-        const date = 'now';
+        const date = moment();
         const action = setEndDate(date);
         expect(action).toEqual({
             type: 'SET_END_DATE',
