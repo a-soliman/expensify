@@ -28,3 +28,12 @@ describe('SortByDate', () => {
     });
 });
 
+describe('SortByAmount', () => {
+    test('Should return the correct type', () => {
+        const action = sortByAmount();
+        expect(action).toEqual({
+            type: 'SORT_BY_AMOUNT'
+        });
+    });
+});
+
