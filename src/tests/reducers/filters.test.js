@@ -30,5 +30,14 @@ describe('FiltersReducer', () => {
         expect(state.sortBy).toBe('date');
     });
 
+    test('Should set text filter', () => {
+        const action = {
+            type: 'SET_TEXT_FILTER',
+            text: 'someText'
+        };
+        const state = filtersReducer(undefined, action);
+        expect(state.text).toBe(action.text);
+    });
+
     
 });
