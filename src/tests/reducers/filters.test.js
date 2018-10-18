@@ -48,5 +48,12 @@ describe('FiltersReducer', () => {
         expect(state.startDate).toBe(action.date);
     });
 
-    
+    test('Should set endDate filter', ()=> {
+        const action = {
+            type: 'SET_END_DATE',
+            date: 555
+        };
+        const state = filtersReducer(undefined, action);
+        expect(state.endDate).toBe(action.date);
+    });
 });
