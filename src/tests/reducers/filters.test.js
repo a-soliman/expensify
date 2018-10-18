@@ -18,5 +18,17 @@ describe('FiltersReducer', () => {
         expect(state.sortBy).toBe('amount');
     });
 
+    test('Should set sortBy to date', () => {
+        const currentStae = {
+            text: '',
+            sortBy: 'amount',
+            startDate: undefined,
+            endDate: undefined
+        };
+        const action = { type: 'SORT_BY_DATE' };
+        const state = filtersReducer(currentStae, action);
+        expect(state.sortBy).toBe('date');
+    });
+
     
 });
