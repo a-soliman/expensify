@@ -54,6 +54,19 @@ describe('ExpensesReducer', () => {
         expect(state).toEqual([expenses[1], expenses[2]]);
     });
 
-
-
+    test('Should edit expense', () => {
+        const newData = {
+            id: '2',
+            description: 'updated description',
+            note: 'updated note'
+        };
+        const action = {
+            type: 'EDIT_EXPENSE',
+            id: newData.id,
+            updates: { ...newData }
+        };
+        const state = expensesReducer(expenses, action);
+        expect(state[1].description).toBe(newData.description);
+        expect(state[1].note).toBe(newData.note);
+    });
 });
