@@ -13,5 +13,10 @@ describe('FiltersReducer', () => {
         });
     });
 
+    test('Should set sortBy to amount', () => {
+        const state = filtersReducer(undefined, { type: 'SORT_BY_AMOUNT' });
+        expect(state.sortBy).toBe('amount');
+    });
+
     
 });
