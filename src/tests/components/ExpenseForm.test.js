@@ -40,4 +40,14 @@ describe('ExpeseForm Component', () => {
         expect(wrapper.state('amount')).toBe(value);
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('Should set note on input change', () => {
+        const value = 'new note';
+        const wrapper = shallow(<ExpenseForm />);
+        wrapper.find('textarea').at([0]).simulate('change', {
+            target: { value }
+        });
+        expect(wrapper.state('note')).toBe(value);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
