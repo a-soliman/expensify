@@ -9,6 +9,7 @@ import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } fro
 import getVisibleExpenses from './selectors/expenses'; 
 
 import 'normalize-scss/sass/_normalize.scss';
+import 'react-dates/lib/css/_datepicker.css';
 import './styles/styles.scss';
 import { isMoment } from 'moment';
 import moment from 'moment';
