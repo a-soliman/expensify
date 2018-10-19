@@ -41,6 +41,16 @@ describe('ExpeseForm Component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('Should not set amount if invalid input', () => {
+        const value = '12.123';
+        const wrapper = shallow(<ExpenseForm />);
+        wrapper.find('input').at([1]).simulate('change', {
+            target: { value }
+        });
+        expect(wrapper.state('amount')).toBe(0);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     test('Should set note on input change', () => {
         const value = 'new note';
         const wrapper = shallow(<ExpenseForm />);
