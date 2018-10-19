@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import moment from 'moment';
 import ExpenseForm from '../../components/ExpenseForm';
 import expenses from '../fixtures/expenses';
 
@@ -74,5 +75,19 @@ describe('ExpeseForm Component', () => {
             description, note, amount, createdAt
         });
         expect(wrapper).toMatchSnapshot();
+    });
+
+    test('Should set new date on date change', () => {
+        const now = moment();
+        const wrapper = shallow(<ExpenseForm />);
+        wrapper.find('SingleDatePicker').prop('onDateChange')(now);
+        expect(wrapper.state('createdAt')).toEqual(now);
+    });
+
+    test('Should set true on Calender focus', () => {
+        const focused = true;
+        const wrapper = shallow(<ExpenseForm />);
+        wrapper.find('SingleDatePicker').prop('onFocusChange')({ focused });
+        expect(wrapper.state('calenderFocused')).toBe(focused);
     });
 });
