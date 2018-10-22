@@ -75,6 +75,8 @@ describe('ExpenseListFilters Component', () => {
     });
 
     test('Should handle date focus change', () => {
-
+        const calenderFocused = 'endDate';
+        wrapper.find('DateRangePicker').prop('onFocusChange')(calenderFocused);
+        expect(wrapper.state('calendarFocused')).toBe(calenderFocused);
     });
 });
