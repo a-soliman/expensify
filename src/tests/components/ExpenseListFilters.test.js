@@ -45,7 +45,15 @@ describe('ExpenseListFilters Component', () => {
     });
 
     test('Should sorytByDate', () => {
+        const value = 'date';
+        wrapper.setProps({
+            filters: altFilters
+        });
+        wrapper.find('select').simulate('change', {
+            target: { value }
+        });
 
+        expect(sortByDate).toHaveBeenCalled();
     });
 
     test('Should sort by amount', () => {
