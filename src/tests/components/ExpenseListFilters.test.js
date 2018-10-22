@@ -27,4 +27,36 @@ describe('ExpenseListFilters Component', () => {
     test('Should render ExpenseListFilters component corectly', () => {
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('Should render ExpenseListFilters component with alt-data corectly', () => {
+        wrapper.setProps({
+            filters: altFilters
+        });
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('Should handle text change', () => {
+        const value = 'Rent';
+        wrapper.find('input').simulate('change', {
+            target: { value }
+        });
+        expect(setTextFilter).toHaveBeenLastCalledWith(value);
+    });
+
+    test('Should sorytByDate', () => {
+
+    });
+
+    test('Should sort by amount', () => {
+
+    });
+
+    test('Should handle date change', () => {
+
+    });
+
+    test('Should handle date focus change', () => {
+
+    });
 });
