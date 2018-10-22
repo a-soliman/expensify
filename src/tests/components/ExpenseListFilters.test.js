@@ -57,7 +57,12 @@ describe('ExpenseListFilters Component', () => {
     });
 
     test('Should sort by amount', () => {
-
+        const value = 'amount';
+        wrapper.find('select').simulate('change', {
+            target: { value } 
+        });
+        
+        expect(sortByAmount).toHaveBeenCalled();
     });
 
     test('Should handle date change', () => {
