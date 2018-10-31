@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpensesSummery Component Should render ExpensesSummery correctly 1`] = `
+<div>
+  Viwing 
+   
+  expenses
+  , with a taotal of 
+  $2.56
+</div>
+`;
