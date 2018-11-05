@@ -3,11 +3,11 @@ import { shallow } from 'enzyme';
 import { LoginPage } from '../../components/LoginPage';
 
 describe('LoginPage', () => {
-    let login, wrapper;
+    let startLogin, wrapper;
 
     beforeEach(() => {
-        login = jest.fn();
-        wrapper = shallow(<LoginPage login={login}/>);
+        startLogin = jest.fn();
+        wrapper = shallow(<LoginPage startLogin={startLogin}/>);
     });
 
     test('Should render loginPage component correctly', () => {
