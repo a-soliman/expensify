@@ -13,4 +13,9 @@ describe('LoginPage', () => {
     test('Should render loginPage component correctly', () => {
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('Should call login on button click', () => {
+        wrapper.find('button').simulate('click');
+        expect(startLogin).toHaveBeenCalled;
+    });
 });
