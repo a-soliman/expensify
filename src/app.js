@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { startSetExpenses, removeExpense, editExpense } from './actions/expenses';
-import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from './actions/filters';
+import { startSetExpenses } from './actions/expenses';
+import { login, logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses'; 
 
 import 'normalize-scss/sass/_normalize.scss';
@@ -41,6 +41,7 @@ ReactDOM.render(<p>Loading...</p>, appContainer);
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses()).then(() => {
             renderApp();
             
@@ -50,6 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
         });
     }
     else {
+        store.dispatch(logout());
         renderApp();
         history.push('/');
     }
