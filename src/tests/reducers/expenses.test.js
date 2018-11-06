@@ -1,30 +1,7 @@
 import expensesReducer from '../../reducers/expenses';
-import { stat } from 'fs';
+import expenses from '../fixtures/expenses';
 
 describe('ExpensesReducer', () => {
-    const expenses = [
-        {
-            id: '1',
-            description: 'expense 1', 
-            note: '', 
-            amount: 0, 
-            createdAt: 0
-        },
-        {
-            id: '2',
-            description: 'expense 2', 
-            note: '', 
-            amount: 0, 
-            createdAt: 0
-        },
-        {
-            id: '3',
-            description: 'expense 3', 
-            note: '', 
-            amount: 0, 
-            createdAt: 0
-        }
-    ];
 
     test('Should set the default state', () => {
         const state = expensesReducer(undefined, { type: '@@INIT'} );
