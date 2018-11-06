@@ -1,0 +1,14 @@
+
+button {
+    font-size: $m-size;
+    color: #fff;
+    border: none;
+    padding: $m-size;
+    font-weight: 300;
+    font-size: $font-size-large;
+}
+
+.button {
+    @extend button;
+    background-color: $light-blue;
+}

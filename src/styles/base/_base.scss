@@ -2,6 +2,21 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    color: $dark-grey;
+    line-height: 1.6;
+    font-family: $font-default;
+    font-size: $m-size;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
 .is-active {
     font-weight: bold;
 }
