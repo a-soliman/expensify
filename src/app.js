@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import AppRouter from './routers/AppRouter';
+import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses, removeExpense, editExpense } from './actions/expenses';
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from './actions/filters';
@@ -28,19 +28,29 @@ const jsx = (
     </Provider> 
 );
 
+let hasRendered = false;
+const renderApp = () => {
+    if ( !hasRendered ){
+        ReactDOM.render(jsx, appContainer);
+        hasRendered = true;
+    }
+};
+
 const appContainer = document.querySelector('#app');
-
 ReactDOM.render(<p>Loading...</p>, appContainer);
-
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(jsx, appContainer);
-});
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        console.log('Logged in!');
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp();
+            
+            if ( history.location.pathname === '/' ) {
+                history.push('/dashboard');
+            }
+        });
     }
     else {
-        console.log('Logged out!');
+        renderApp();
+        history.push('/');
     }
 });
