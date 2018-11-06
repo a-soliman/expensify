@@ -37,5 +37,10 @@ exports[`Header Component Should render header correctlly 1`] = `
       </NavLink>
     </li>
   </ul>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
 </header>
 `;
