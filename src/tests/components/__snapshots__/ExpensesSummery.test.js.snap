@@ -1,11 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExpensesSummery Component Should render ExpensesSummery correctly 1`] = `
-<div>
-  Viwing 
-   
-  expenses
-  , with a taotal of 
-  $2.56
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Viwing 
+      <span />
+       
+      expenses
+      , with a taotal of 
+      <span>
+        $2.56
+      </span>
+    </h1>
+    <div
+      className="page-header__action"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Add Expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
