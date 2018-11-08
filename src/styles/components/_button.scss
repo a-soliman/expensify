@@ -3,12 +3,25 @@ button {
     font-size: $m-size;
     color: #fff;
     border: none;
+    display: inline-block;
     padding: $m-size;
     font-weight: 300;
     font-size: $font-size-large;
+    text-decoration: none;
+    line-height: 1;
 }
 
 .button {
     @extend button;
     background-color: $light-blue;
+}
+
+.button--link {
+    @extend button;
+    background: none;
+}
+
+.button--secondary {
+    @extend button;
+    background: #888888;
 }
